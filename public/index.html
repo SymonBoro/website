@@ -142,13 +142,13 @@
           <div class="task-card">
             <h3>Download App</h3>
             <p>Install and open app for 30 seconds</p>
-            <storong>+100 XP</storong>
+            <strong>+100 XP</strong>
             <button class="primary-button">Start task</button>
           </div>
 
           <div class="task-card">
-            <h3>Visit wedsite</h3>
-            <p>open and stay 20 seconds</p>
+            <h3>Visit website</h3>
+            <p>Open and stay 20 seconds</p>
             <strong>+80 XP</strong>
             <button class="primary-button">Start Task</button>
           </div>
@@ -186,30 +186,37 @@
           </div>
 
           <div class="dashboard-grid">
-            <article class="wallet-card glass">
-              <div class="wallet-head">
+            <article class="wallet-card glass premium-wallet">
+              <div class="wallet-top">
                 <div>
-                  <span class="muted-label">Current balance</span>
-                  <h3 id="dashboardXp">0 XP</h3>
+                  <span class="muted-label">your balance</span>
+                  <h2 id="dashboardXp">0 XP</h2>
+                  <p id="dashboardInr">₹0.00 available</p>
                 </div>
                 <img id="userAvatar" class="avatar hidden" alt="Profile" />
               </div>
-              <p id="dashboardInr">₹0.00 available</p>
-              <div class="progress-wrap">
-                <div class="progress-meta">
+              <div class="wallet-progress">
+                <div class="progress=meta">
                   <span>Level progress</span>
-                  <span id="levelLabel">Level 1</span>
+                  <span id="levelProgressBar"></span>
                 </div>
                 <div class="progress-track">
                   <span id="levelProgressBar"></span>
                 </div>
               </div>
-              <div class="chip-row">
-                <span class="info-chip" id="streakChip">0 day streak</span>
-                <span class="info-chip" id="referralChip">0 referral XP</span>
+
+              <div class="wallet-stats">
+                <div class="stat-box">
+                  <span>🔥 Streak</span>
+                  <strong id="streakChip">0 days</strong>
+                </div>
+                <div class="stat-box">
+                  <span>👥 Referrals</span>
+                  <strong id="referralChip">0 XP</strong>
+                </div>
               </div>
             </article>
-
+            
             <article class="panel-card">
               <span class="muted-label">Referral code</span>
               <h3 id="referralCode">-</h3>
