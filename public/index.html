@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>XP Reward | Earn Money by Completing Simple Tasks</title>
+    <meta
+      name="description"
+      content="Earn verified XP tokens from legitimate partner tasks, convert XP into INR, and withdraw rewards securely."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/assets/styles.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar">
+        <a class="brand" href="/">
+          <span class="brand-mark">XP</span>
+          <span>
+            <strong>XP Reward</strong>
+            <small>Smart task rewards</small>
+          </span>
+        </a>
+        <nav class="top-actions">
+          <a class="ghost-button" href="/admin">Admin</a>
+          <button id="loginBtn" class="primary-button">Start Earning Now</button>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div class="hero-copy">
+            <span class="eyebrow">Verified rewards, mobile-first payouts</span>
+            <h1>Earn Money by Completing Simple Tasks</h1>
+            <p class="hero-subtitle">Convert your XP tokens into real cash easily.</p>
+            <p class="hero-body">
+              XP Reward gives users a transparent way to complete legitimate partner tasks, track verified XP, and
+              withdraw earnings in INR with UPI or Google Play gift cards.
+            </p>
+            <div class="hero-actions">
+              <button id="heroCta" class="primary-button">Start Earning Now</button>
+              <a class="ghost-button" href="#tasks">View Tasks</a>
+            </div>
+            <div class="trust-badges">
+              <span>Secure</span>
+              <span>Fast Payments</span>
+              <span>100% Free</span>
+            </div>
+          </div>
+
+          <div class="hero-panel glass">
+            <div class="phone-card">
+              <div class="phone-card-top">
+                <span class="status-pill">Live wallet</span>
+                <span class="status-dot"></span>
+              </div>
+              <h2 id="phoneXpBalance">0 XP</h2>
+              <p id="phoneInrBalance">₹0.00 ready for withdrawal</p>
+              <div class="progress-wrap">
+                <div class="progress-meta">
+                  <span>Withdrawal progress</span>
+                  <span id="phoneProgressText">0%</span>
+                </div>
+                <div class="progress-track">
+                  <span id="phoneProgressBar"></span>
+                </div>
+              </div>
+              <div class="wallet-grid">
+                <article>
+                  <span>Rate</span>
+                  <strong id="rateText">1000 XP = ₹1</strong>
+                </article>
+                <article>
+                  <span>Minimum</span>
+                  <strong id="minimumText">₹100</strong>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="stats-grid">
+          <article class="stat-card">
+            <span>Total users</span>
+            <strong id="statUsers">0</strong>
+            <p>Growing verified community</p>
+          </article>
+          <article class="stat-card">
+            <span>XP distributed</span>
+            <strong id="statXp">0</strong>
+            <p>Only after CPA confirmation</p>
+          </article>
+          <article class="stat-card">
+            <span>Daily earnings</span>
+            <strong id="statDaily">₹0</strong>
+            <p>Based on approved activity today</p>
+          </article>
+        </section>
+
+        <section class="section">
+          <div class="section-heading">
+            <span class="eyebrow">How it works</span>
+            <h2>Simple path from signup to rewards</h2>
+          </div>
+          <div class="steps-grid">
+            <article class="step-card">
+              <strong>1</strong>
+              <h3>Sign up</h3>
+              <p>Use Google Sign-In to create a secure profile with your name, email, and photo.</p>
+            </article>
+            <article class="step-card">
+              <strong>2</strong>
+              <h3>Complete tasks</h3>
+              <p>Choose from verified offers with cooldowns, daily limits, and anti-fraud protections.</p>
+            </article>
+            <article class="step-card">
+              <strong>3</strong>
+              <h3>Earn XP</h3>
+              <p>XP is credited only after CPA postback verification or admin approval.</p>
+            </article>
+            <article class="step-card">
+              <strong>4</strong>
+              <h3>Withdraw</h3>
+              <p>Convert XP to INR and request secure payouts after the minimum threshold is reached.</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="tasks" class="section">
+          <div class="section-heading split-heading">
+            <div>
+              <span class="eyebrow">Task preview</span>
+              <h2>Popular verified categories</h2>
+            </div>
+            <p>Rewards update dynamically based on revenue and approved task performance.</p>
+          </div>
+          <div id="taskPreviewGrid" class="task-grid loading-grid">
+            <div class="skeleton-card"></div>
+            <div class="skeleton-card"></div>
+            <div class="skeleton-card"></div>
+            <div class="skeleton-card"></div>
+          </div>
+        </section>
+
+        <section class="section two-up">
+          <article class="panel-card accent-card">
+            <span class="eyebrow">Referral boost</span>
+            <h2>Invite friends with your unique referral code</h2>
+            <p>
+              Earn bonus XP when invited users join and complete their first verified task. Referral tracking stays
+              visible in your dashboard.
+            </p>
+            <div class="inline-note">Bonus is credited on legitimate, approved activity only.</div>
+          </article>
+          <article class="panel-card">
+            <span class="eyebrow">Trust & legal</span>
+            <h2>Built for clarity, not hype</h2>
+            <ul class="trust-list">
+              <li>Transparent XP-to-INR conversion</li>
+              <li>No hidden fees on withdrawals</li>
+              <li>Secure login and fraud monitoring</li>
+              <li>Clear terms, privacy policy, and disclaimer</li>
+            </ul>
+          </article>
+        </section>
+
+        <section id="dashboard" class="section dashboard-section hidden">
+          <div class="section-heading split-heading">
+            <div>
+              <span class="eyebrow">Dashboard</span>
+              <h2 id="dashboardGreeting">Your XP wallet</h2>
+            </div>
+            <button id="logoutBtn" class="ghost-button">Log out</button>
+          </div>
+
+          <div class="dashboard-grid">
+            <article class="wallet-card glass">
+              <div class="wallet-head">
+                <div>
+                  <span class="muted-label">Current balance</span>
+                  <h3 id="dashboardXp">0 XP</h3>
+                </div>
+                <img id="userAvatar" class="avatar hidden" alt="Profile" />
+              </div>
+              <p id="dashboardInr">₹0.00 available</p>
+              <div class="progress-wrap">
+                <div class="progress-meta">
+                  <span>Level progress</span>
+                  <span id="levelLabel">Level 1</span>
+                </div>
+                <div class="progress-track">
+                  <span id="levelProgressBar"></span>
+                </div>
+              </div>
+              <div class="chip-row">
+                <span class="info-chip" id="streakChip">0 day streak</span>
+                <span class="info-chip" id="referralChip">0 referral XP</span>
+              </div>
+            </article>
+
+            <article class="panel-card">
+              <span class="muted-label">Referral code</span>
+              <h3 id="referralCode">-</h3>
+              <p id="referralShareUrl" class="subtle-copy">Share your invite link to earn bonus XP.</p>
+              <div class="inline-actions">
+                <button id="copyReferralBtn" class="primary-button small-button">Copy link</button>
+              </div>
+            </article>
+
+            <article class="panel-card">
+              <span class="muted-label">Withdraw rewards</span>
+              <form id="withdrawForm" class="stack-form">
+                <label>
+                  Amount (INR)
+                  <input type="number" name="amount" min="100" step="1" placeholder="100" required />
+                </label>
+                <label>
+                  Method
+                  <select name="method" required>
+                    <option value="UPI">UPI</option>
+                    <option value="GOOGLE_PLAY_GIFT_CARD">Google Play Gift Card</option>
+                  </select>
+                </label>
+                <label>
+                  Payment details
+                  <input type="text" name="paymentDetails" placeholder="UPI ID or email" required />
+                </label>
+                <button class="primary-button" type="submit">Request Withdrawal</button>
+              </form>
+            </article>
+          </div>
+
+          <div class="dashboard-panels">
+            <article class="panel-card">
+              <div class="panel-head">
+                <div>
+                  <span class="muted-label">Available tasks</span>
+                  <h3>Earn more XP today</h3>
+                </div>
+              </div>
+              <div id="dashboardTasks" class="task-grid"></div>
+            </article>
+
+            <article class="panel-card">
+              <div class="panel-head">
+                <div>
+                  <span class="muted-label">Recent activity</span>
+                  <h3>Completions and withdrawals</h3>
+                </div>
+              </div>
+              <div id="activityList" class="activity-list"></div>
+            </article>
+          </div>
+        </section>
+
+        <section class="section legal-strip">
+          <p>
+            Earnings depend on task availability and successful completion. Read our
+            <a href="/terms">Terms &amp; Conditions</a> and <a href="/privacy">Privacy Policy</a>.
+          </p>
+        </section>
+      </main>
+    </div>
+
+    <div id="liveToast" class="live-toast hidden"></div>
+
+    <script src="/assets/app.js" defer></script>
+  </body>
+</html>

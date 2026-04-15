@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>XP Reward Admin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/assets/styles.css" />
+  </head>
+  <body class="admin-body">
+    <div class="site-shell">
+      <header class="topbar">
+        <a class="brand" href="/">
+          <span class="brand-mark">XP</span>
+          <span>
+            <strong>XP Reward Admin</strong>
+            <small>Operations and payouts</small>
+          </span>
+        </a>
+        <nav class="top-actions">
+          <a class="ghost-button" href="/">Back to site</a>
+          <button id="adminLogoutBtn" class="ghost-button hidden">Log out</button>
+        </nav>
+      </header>
+
+      <main>
+        <section id="adminLoginSection" class="section narrow">
+          <div class="panel-card">
+            <span class="eyebrow">Secure admin login</span>
+            <h1>Manage XP Reward</h1>
+            <form id="adminLoginForm" class="stack-form">
+              <label>
+                Email
+                <input type="email" name="email" placeholder="admin@xpreward.com" required />
+              </label>
+              <label>
+                Password
+                <input type="password" name="password" placeholder="Admin password" required />
+              </label>
+              <button class="primary-button" type="submit">Access Admin Panel</button>
+            </form>
+          </div>
+        </section>
+
+        <section id="adminApp" class="hidden">
+          <section class="stats-grid admin-stats" id="adminSummary"></section>
+
+          <section class="section admin-grid">
+            <article class="panel-card">
+              <span class="eyebrow">Economy settings</span>
+              <h2>Rates, caps and anti-fraud thresholds</h2>
+              <form id="settingsForm" class="stack-form compact-form">
+                <label>
+                  XP per INR
+                  <input type="number" name="xpPerInr" min="1" required />
+                </label>
+                <label>
+                  Minimum withdrawal (INR)
+                  <input type="number" name="minimumWithdrawalInr" min="1" required />
+                </label>
+                <label>
+                  Daily earning cap (XP)
+                  <input type="number" name="dailyEarningCapXp" min="1" required />
+                </label>
+                <label>
+                  Referral invite bonus (XP)
+                  <input type="number" name="inviteBonusXp" min="0" required />
+                </label>
+                <label>
+                  Content locker seconds
+                  <input type="number" name="contentLockerSeconds" min="0" required />
+                </label>
+                <label>
+                  Max accounts per device
+                  <input type="number" name="maxAccountsPerDevice" min="1" required />
+                </label>
+                <label>
+                  Max accounts per IP
+                  <input type="number" name="maxAccountsPerIp" min="1" required />
+                </label>
+                <button class="primary-button" type="submit">Save Settings</button>
+              </form>
+            </article>
+
+            <article class="panel-card">
+              <div class="panel-head">
+                <div>
+                  <span class="eyebrow">Task manager</span>
+                  <h2>Create or edit task offers</h2>
+                </div>
+                <button id="resetTaskFormBtn" class="ghost-button small-button">New Task</button>
+              </div>
+              <form id="taskForm" class="stack-form compact-form">
+                <input type="hidden" name="taskId" />
+                <label>
+                  Slug
+                  <input type="text" name="slug" placeholder="quick-task" required />
+                </label>
+                <label>
+                  Category
+                  <select name="category" required>
+                    <option>Gmail Submit</option>
+                    <option>ZIP Code Submit</option>
+                    <option>App Install</option>
+                    <option>Quick Task</option>
+                  </select>
+                </label>
+                <label>
+                  Title
+                  <input type="text" name="title" required />
+                </label>
+                <label>
+                  Description
+                  <textarea name="description" rows="3" required></textarea>
+                </label>
+                <div class="inline-form">
+                  <label>
+                    Reward XP
+                    <input type="number" name="rewardXp" min="1" required />
+                  </label>
+                  <label>
+                    Bonus XP
+                    <input type="number" name="bonusXp" min="0" value="0" />
+                  </label>
+                </div>
+                <div class="inline-form">
+                  <label>
+                    Daily limit
+                    <input type="number" name="dailyLimitPerUser" min="1" required />
+                  </label>
+                  <label>
+                    Cooldown minutes
+                    <input type="number" name="cooldownMinutes" min="0" required />
+                  </label>
+                </div>
+                <label class="checkbox-label">
+                  <input type="checkbox" name="featured" />
+                  Featured task
+                </label>
+                <div class="offer-editor">
+                  <div class="panel-head">
+                    <h3>CPA offers</h3>
+                    <button id="addOfferBtn" class="ghost-button small-button" type="button">Add Offer</button>
+                  </div>
+                  <div id="offerList" class="offer-list"></div>
+                </div>
+                <button class="primary-button" type="submit">Save Task</button>
+              </form>
+            </article>
+          </section>
+
+          <section class="section">
+            <div class="panel-card">
+              <div class="panel-head">
+                <div>
+                  <span class="eyebrow">Current tasks</span>
+                  <h2>Offer rotation and rewards</h2>
+                </div>
+              </div>
+              <div id="adminTaskList" class="list-table"></div>
+            </div>
+          </section>
+
+          <section class="section admin-grid">
+            <article class="panel-card">
+              <div class="panel-head">
+                <div>
+                  <span class="eyebrow">Task completions</span>
+                  <h2>Approve or reject conversions</h2>
+                </div>
+              </div>
+              <div id="completionList" class="list-table"></div>
+            </article>
+
+            <article class="panel-card">
+              <div class="panel-head">
+                <div>
+                  <span class="eyebrow">Withdrawals</span>
+                  <h2>Review payout requests</h2>
+                </div>
+              </div>
+              <div id="withdrawalList" class="list-table"></div>
+            </article>
+          </section>
+
+          <section class="section">
+            <div class="panel-card">
+              <div class="panel-head">
+                <div>
+                  <span class="eyebrow">User management</span>
+                  <h2>XP balance, activity and flags</h2>
+                </div>
+              </div>
+              <div id="userList" class="list-table"></div>
+            </div>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <script src="/assets/admin.js" defer></script>
+  </body>
+</html>
