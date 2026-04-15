@@ -641,4 +641,25 @@ textarea {
   .dashboard-grid {
     grid-template-columns: 1.1fr 0.9fr 0.9fr;
   }
-}
+  .task-card{
+    backgroung: rgba(0,0,0,0.5);
+    padding:15px;
+    border-radius:12px;
+    margin-bottom:15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+
+  .task-card h3{
+    margin:0 0 5px;
+  }
+
+  .task-card p {
+    font-size:14px;
+    opacity:0.8;
+  }
+
+  .task-card strong {
+    display:block;
+    margin:10px 0;
+    color:#22c55e;
+  }
